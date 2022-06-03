@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict"
+
+        let toDivide = (firstNumber, secondNumber) => firstNumber / secondNumber;
+        let toMultiply = (firstNumber, secondNumber) => firstNumber * secondNumber;
+        let toAdd = (firstNumber, secondNumber) => firstNumber + secondNumber;
+        let toTake = (firstNumber, secondNumber) => firstNumber - secondNumber;
+        
+        function createForm() {
+
+            let firstNumber = prompt("Enter a first number", "");
+            let secondNumber = prompt("Enter a second number", "");
+            const operator = prompt("Enter the operator", "");
+            
+            if ((firstNumber !== null && firstNumber !== "" && !isNaN(firstNumber)) && (secondNumber !== null && secondNumber !== "" && !isNaN(secondNumber))) {
+
+                firstNumber = Number(firstNumber);
+                secondNumber = Number(secondNumber); 
+
+                if (operator === "/") {
+                    alert(`Your result is: ${toDivide(firstNumber, secondNumber)}`);
+                } else if (operator === "*") {
+                    alert(`Your result is: ${toMultiply(firstNumber, secondNumber)}`);
+                } else if (operator === "+") {
+                    alert(`Your result is: ${toAdd(firstNumber, secondNumber)}`);
+                } else if (operator === "-") {
+                    alert(`Your result is: ${toTake(firstNumber, secondNumber)}`);
+                } else {
+                    alert("Incorrect operator!");
+                }
+
+            } else {
+                alert("Incorrect input!");
+            }
+
+        }
+        
+        createForm();
+
+    </script>
+</body>
+</html>
